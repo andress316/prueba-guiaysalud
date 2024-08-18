@@ -24,14 +24,14 @@ app.use(express.json()) // Para que la app utilice json
 app.use(cors())
 
 // Definición del puerto
-// const PORT = process.env.PORT || 4000;
-// app.listen(PORT, () => {
-//     console.log(`Servidor corriendo en el puerto: ${PORT}`)
-// })
+const PORT = process.env.PORT || 4000;
+app.listen(PORT, () => {
+    console.log(`Servidor corriendo en el puerto: ${PORT}`)
+})
 
 // Servidor HTTP
-const serverHttp = http.createServer(app);
-serverHttp.listen(process.env.HTTP_PORT, process.env.IP);
+// const serverHttp = http.createServer(app);
+// serverHttp.listen(process.env.HTTP_PORT, process.env.IP);
 
 // Servidor HTTPS
 // const serverHttps = https.createServer(httpsServerOptions, app);
