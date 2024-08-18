@@ -21,7 +21,7 @@ app.use(express.json()) // Para que la app utilice json
 
 
 // Configuramos CORS //<-- Paso 5
-// app.use(cors())
+app.use(cors())
 
 // Definición del puerto
 const PORT = process.env.PORT || 4000;
