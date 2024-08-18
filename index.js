@@ -14,10 +14,10 @@ const app = express()
 app.use(express.json()) // Para que la app utilice json
 
 // Opciones para el servidor https, para usar el certificado TLS
-const httpsServerOptions = {
-    key: fs.readFileSync(process.env.KEY_PATH),
-    cert: fs.readFileSync(process.env.CERT_PATH),
-    };
+// const httpsServerOptions = {
+//     key: fs.readFileSync(process.env.KEY_PATH),
+//     cert: fs.readFileSync(process.env.CERT_PATH),
+//     };
 
 
 // Configuramos CORS //<-- Paso 5
@@ -34,8 +34,8 @@ const serverHttp = http.createServer(app);
 serverHttp.listen(process.env.HTTP_PORT, process.env.IP);
 
 // Servidor HTTPS
-const serverHttps = https.createServer(httpsServerOptions, app);
-serverHttps.listen(process.env.HTTPS_PORT, process.env.IP);
+// const serverHttps = https.createServer(httpsServerOptions, app);
+// serverHttps.listen(process.env.HTTPS_PORT, process.env.IP);
 
 
 app.get('/', function (req,res) {res.send({msg: "Bienvenido a las pruebas"})})
